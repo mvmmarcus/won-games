@@ -8,7 +8,7 @@ export default {
     title: 'Read Dead Redemption',
     developer: 'Rockstar Games',
     price: '$ 235,00',
-    coverImage: '/img/rdr2.png',
+    img: '/img/rdr2.png',
     promotionalPrice: '$ 215,00'
   },
   argTypes: {
