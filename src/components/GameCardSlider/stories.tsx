@@ -9,14 +9,16 @@ const items = [
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x140',
     price: 'R$ 235,00',
-    promotionalPrice: 'R$ 215,00'
+    promotionalPrice: 'R$ 215,00',
+    ribbon: '20 OFF'
   },
   {
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x141',
     price: 'R$ 235,00',
-    promotionalPrice: 'R$ 215,00'
+    promotionalPrice: 'R$ 215,00',
+    ribbon: '20 OFF'
   },
   {
     title: 'Population Zero',
@@ -44,7 +46,8 @@ const items = [
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x145',
     price: 'R$ 235,00',
-    promotionalPrice: 'R$ 215,00'
+    promotionalPrice: 'R$ 215,00',
+    ribbon: '20 OFF'
   }
 ]
 
@@ -61,7 +64,7 @@ export default {
 } as Meta
 
 export const Default: Story<GameCardProps[]> = (args) => (
-  <div style={{ maxWidth: '130rem', margin: '0 auto', padding: '4rem' }}>
+  <div style={{ maxWidth: '130rem', margin: '0 auto', padding: '4rem 2rem' }}>
     <GameCardSlider items={args} {...args} />
   </div>
 )
