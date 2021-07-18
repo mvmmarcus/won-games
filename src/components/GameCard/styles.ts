@@ -45,6 +45,8 @@ export const Content = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
 
     background: ${theme.colors.white};
     padding: ${theme.spacings.xsmall};

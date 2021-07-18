@@ -11,7 +11,7 @@ export type GameCardProps = {
   title: string
   developer: string
   price: string
-  coverImage: string
+  img: string
   promotionalPrice?: string
   isFavorite?: boolean
   ribbon?: React.ReactNode
@@ -24,7 +24,7 @@ const GameCard = ({
   title,
   developer,
   price,
-  coverImage,
+  img,
   promotionalPrice,
   ribbon,
   ribbonColor = 'primary',
@@ -38,9 +38,9 @@ const GameCard = ({
         {ribbon}
       </Ribbon>
     )}
-    {!!coverImage && (
+    {!!img && (
       <S.ImageBox>
-        <img src={coverImage} alt={title} />
+        <img src={img} alt={title} />
       </S.ImageBox>
     )}
     <S.Content>

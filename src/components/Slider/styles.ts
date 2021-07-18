@@ -66,7 +66,8 @@ export const Wrapper = styled.section`
   }
 
   .slick-slide {
-    display: none;
+    display: grid;
+    gap: 20px;
     float: left;
 
     height: 100%;

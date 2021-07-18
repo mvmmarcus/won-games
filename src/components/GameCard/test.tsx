@@ -7,7 +7,7 @@ const props = {
   title: 'Population Zero',
   developer: 'Other Ocean',
   price: '$ 235,00',
-  coverImage: '/cover-image.png'
+  img: '/cover-image.png'
 }
 
 describe('<GameCard />', () => {
@@ -26,7 +26,7 @@ describe('<GameCard />', () => {
   })
 
   it('should render cover image', () => {
-    renderWithTheme(<GameCard {...props} coverImage="/cover-image.png" />)
+    renderWithTheme(<GameCard {...props} img="/cover-image.png" />)
 
     expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
       'src',

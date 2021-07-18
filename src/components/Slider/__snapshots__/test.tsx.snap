@@ -69,7 +69,8 @@ exports[`<Slider /> should render children as slider item 1`] = `
 }
 
 .c0 .slick-slide {
-  display: none;
+  display: grid;
+  gap: 20px;
   float: left;
   height: 100%;
   min-height: 1px;
