@@ -5,17 +5,17 @@ import 'jest-styled-components'
 import Heading from '.'
 
 describe('<Heading />', () => {
-  it('should render a black heading by default', () => {
+  it('should render a white heading by default', () => {
     renderWithTheme(<Heading>Heading</Heading>)
     expect(screen.getByRole('heading', { name: /heading/i })).toHaveStyle({
-      color: '#030517'
+      color: '#FAFAFA'
     })
   })
 
   it('should render a white heading when color is passed', () => {
-    renderWithTheme(<Heading color="white">Heading</Heading>)
+    renderWithTheme(<Heading color="black">Heading</Heading>)
     expect(screen.getByRole('heading', { name: /heading/i })).toHaveStyle({
-      color: '#fafafa'
+      color: '#030517'
     })
   })
 

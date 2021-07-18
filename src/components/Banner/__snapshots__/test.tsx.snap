@@ -73,7 +73,7 @@ exports[`<Banner /> should render the Banner component 1`] = `
     right: 0;
   }
 
-  .c0 .sc-gsDJrp::before {
+  .c0 .sc-gsDJrp::after {
     display: none;
   }
 }

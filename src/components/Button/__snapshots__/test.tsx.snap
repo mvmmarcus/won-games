@@ -20,6 +20,8 @@ exports[`<Button /> should render the default button 1`] = `
   border: 0.4rem;
   padding: 0.8rem;
   cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   height: 4rem;
   font-size: 1.4rem;
   padding: 0.8rem 3.2rem;
