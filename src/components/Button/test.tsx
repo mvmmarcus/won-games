@@ -68,4 +68,12 @@ describe('<Button />', () => {
       '/link'
     )
   })
+
+  it('should render Button as minimal version', () => {
+    renderWithTheme(<Button minimal>Buy now</Button>)
+
+    expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyle({
+      background: 'none'
+    })
+  })
 })
