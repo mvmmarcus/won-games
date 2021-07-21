@@ -19,9 +19,10 @@ describe('<Checkbox />', () => {
   })
 
   it('should render without label by default', () => {
-    renderWithTheme(<Checkbox />)
+    const { container } = renderWithTheme(<Checkbox />)
 
     expect(screen.queryByLabelText('checkbox')).not.toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render with black label', () => {
