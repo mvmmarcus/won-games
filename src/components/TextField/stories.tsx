@@ -31,3 +31,9 @@ export const withIcon: Story<TextFieldProps> = (args) => (
     <TextField icon={<AccountCircle />} {...args} />
   </div>
 )
+
+export const withError: Story<TextFieldProps> = (args) => (
+  <div style={{ maxWidth: 300, padding: 15 }}>
+    <TextField error="Error message" icon={<AccountCircle />} {...args} />
+  </div>
+)

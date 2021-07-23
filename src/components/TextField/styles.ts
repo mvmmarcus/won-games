@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import { IconPositionProps, TextFieldProps } from '.'
 
-type WrapperProps = Pick<TextFieldProps, 'isDisabled'>
+type WrapperProps = { hasError?: boolean } & Pick<TextFieldProps, 'isDisabled'>
 
 type InputWrapperProps = {
   hasIcon: boolean
@@ -36,20 +36,27 @@ const wrapperModifiers = {
   `,
 
   isDisabled: (theme: DefaultTheme) => css`
-    ${Label} {
+    cursor: not-allowed;
+
+    ${Label}, ${Input}, svg {
+      cursor: not-allowed;
       color: ${theme.colors.disabled};
     }
 
     ${Input} {
-      color: ${theme.colors.disabled};
-
       &::placeholder {
         color: ${theme.colors.disabled};
       }
     }
+  `,
 
-    svg {
-      color: ${theme.colors.disabled};
+  hasError: () => css`
+    ${Label}, svg {
+      color: red;
+    }
+
+    ${InputWrapper} {
+      border: 1px solid red;
     }
   `
 }
@@ -101,7 +108,17 @@ export const Label = styled.label`
 `
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, isDisabled }) => css`
+  ${({ theme, isDisabled, hasError }) => css`
     ${isDisabled && wrapperModifiers.isDisabled(theme)}
+    ${hasError && wrapperModifiers.hasError}
+  `}
+`
+
+export const Error = styled.p`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    color: red;
+    line-height: 1;
+    margin-top: calc(${theme.spacings.xxsmall} / 2);
   `}
 `

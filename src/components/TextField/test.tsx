@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react'
+import { getByText, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
 import { AccountCircle } from 'styled-icons/material-outlined'
@@ -95,6 +95,23 @@ describe('<TextField />', () => {
 
     expect(screen.getByLabelText('TextField')).toHaveStyle({
       color: '#B5B5B5'
+    })
+  })
+
+  it('It should render error message when exists', () => {
+    renderWithTheme(
+      <TextField
+        labelFor="TextField"
+        id="TextField"
+        error="Error message"
+        label="Label"
+      />
+    )
+
+    expect(screen.getByText(/Error message/i)).toBeInTheDocument()
+    expect(screen.getByText(/Label/i)).toHaveStyle({ color: 'red' })
+    expect(screen.getByLabelText(/Label/i).parentElement).toHaveStyle({
+      borderColor: '1px solid red'
     })
   })
 })
